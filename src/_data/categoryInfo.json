@@ -1,0 +1,6 @@
+[
+  { "slug": "building", "title": "Building", "blurb": "Projects, experiments and things shipped (or half-shipped)." },
+  { "slug": "learning", "title": "Learning", "blurb": "Notes from picking up new tools, concepts and skills." },
+  { "slug": "tools", "title": "Tech & Tools", "blurb": "Setups, workflows and opinions on the software I use." },
+  { "slug": "life", "title": "Life", "blurb": "Everything that happens away from the keyboard." }
+]
