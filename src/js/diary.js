@@ -1,4 +1,3 @@
-// "Show N more +" / "Show less −" on the home page columns.
 document.querySelectorAll(".col").forEach(function (col) {
   var btn = col.querySelector("[data-toggle]");
   if (!btn) return;

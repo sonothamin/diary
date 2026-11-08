@@ -1,16 +1,3 @@
-/*
-  Tags are discovered from the posts: any value in a post's `tags:` front matter gets a
-  /tags/<slug>/ page listing every post that carries it. Use one tag per project or topic.
-
-    tags: [ROM Project, esp32]
-
-  - The URL slug is the lowercased, hyphenated tag ("ROM Project" -> rom-project).
-  - The display name is the tag as you first wrote it, so "ROM Project" keeps its capitals.
-    A tag written as a plain slug ("rom-project") is title-cased ("Rom Project").
-  - src/_data/tagInfo.json is optional: { "rom-project": { "title": "ROM Project", "blurb": "..." } }
-    sets the display name and a short description shown on the tag page.
-  - Tags are sorted by most recent post, so active projects float to the top.
-*/
 import { readFileSync } from "node:fs";
 import { scanPosts, slugify, titleFrom, normTags } from "../../lib/posts.js";
 

@@ -4,8 +4,8 @@ export default {
   description: "Notes on building, learning and everything else.",
   origin: "https://sonothamin.dev",
   year: new Date().getFullYear(),
-  homeLimit: 5, // rows per category column on the home page before "Show more"
-  // Links back to the main site (plain root paths, so no /Diary/ prefix).
+  homeLimit: 5,
+  
   nav: [
     { label: "Home", href: "/" },
     { label: "Portfolio", href: "/portfolio/" },

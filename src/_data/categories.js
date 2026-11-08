@@ -1,11 +1,3 @@
-/*
-  Categories are discovered from the posts themselves: any `category:` used in a post's
-  front matter gets a home-page column and a /category/<slug>/ page.
-
-  src/_data/categoryInfo.json is optional. Add an entry there to give a category a nicer
-  title, a description, or to control the order (listed ones come first, in file order;
-  new ones follow alphabetically).
-*/
 import { readFileSync } from "node:fs";
 import { scanPosts, titleFrom } from "../../lib/posts.js";
 
