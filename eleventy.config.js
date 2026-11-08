@@ -9,7 +9,7 @@
 import { slugify, normTags } from "./lib/posts.js";
 
 const isBuild = process.env.ELEVENTY_RUN_MODE === "build";
-const pathPrefix = process.env.PATH_PREFIX ?? "/Diary/";
+const pathPrefix = process.env.PATH_PREFIX ?? "/diary/";
 
 export default function (eleventyConfig) {
   /* ---------- static files ---------- */
