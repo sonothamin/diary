@@ -2,6 +2,7 @@
   const grid = document.querySelector(".design-grid");
   const siteCursor = document.querySelector("[data-site-cursor]");
   const coarse = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- Cursor sizing ---------- */
   const getCursorMetrics = () => {
@@ -98,9 +99,27 @@
   };
 
   /* ---------- Page navigation transitions ---------- */
-  const initNavTransitions = () => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let navigating = false;
 
+  // Fade the page out, then go. `dir` (-1 or 1) slides the page the way a swipe went.
+  const navigateTo = (href, dir = 0) => {
+    if (navigating) return;
+    navigating = true;
+
+    if (reduceMotion) {
+      window.location.href = href;
+      return;
+    }
+
+    if (dir) document.body.style.setProperty("--swipe-x", `${dir * 56}px`);
+    document.body.classList.add("is-exiting");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 200);
+  };
+
+  const initNavTransitions = () => {
     document.addEventListener("click", (e) => {
       const link = e.target.closest("a");
       if (!link) return;
@@ -125,20 +144,168 @@
       if (reduceMotion) return;
 
       e.preventDefault();
-      document.body.classList.add("is-exiting");
-
-      setTimeout(() => {
-        window.location.href = url.href;
-      }, 200);
+      navigateTo(url.href);
     });
 
-    window.addEventListener("pageshow", (e) => {
-      document.body.classList.remove("is-exiting");
+    // Back/forward can restore this page from the cache in its exited state.
+    window.addEventListener("pageshow", () => {
+      navigating = false;
+      document.body.classList.remove("is-exiting", "is-swiping", "is-settling");
+      document.body.style.removeProperty("--swipe-x");
     });
+  };
+
+  /* ---------- Swipe between pages (touch devices) ---------- */
+  // Swiping left goes to the next page in the nav, right to the previous one.
+  // Pages that don't exist are skipped, and the ends of the nav don't wrap.
+  const initSwipeNav = () => {
+    if (!coarse) return;
+
+    const norm = (path) => path.replace(/index\.html$/, "").replace(/\/?$/, "/");
+    const anchors = [...document.querySelectorAll(".site-nav .nav-link")];
+    const pages = anchors.map((a) => new URL(a.href, window.location.href));
+    if (pages.length < 2) return;
+
+    // Every diary page (posts, categories, tags) lives under the Blog item, so go by the
+    // nav's own "current page" marker and only fall back to matching the path.
+    let here = anchors.findIndex((a) => a.getAttribute("aria-current") === "page");
+    if (here === -1) here = pages.findIndex((u) => norm(u.pathname) === norm(window.location.pathname));
+    if (here === -1) return;
+
+    // Only same-origin pages can be reached with the page-out transition.
+    const reachable = pages.map((u, i) => i === here || u.origin === window.location.origin);
+
+    // Which nav pages actually exist? Checked once, when idle or on the first touch.
+    let found = null;
+    let probe = null;
+    const probePages = () => {
+      probe ??= Promise.all(
+        pages.map((u, i) =>
+          i === here
+            ? true
+            : !reachable[i]
+              ? false
+              : fetch(u.href, { method: "HEAD" })
+                  .then((r) => r.ok)
+                  .catch(() => true) // offline or blocked: assume it exists
+        )
+      ).then((list) => (found = list));
+      return probe;
+    };
+
+    // Warm the check up when the browser is idle so the first swipe never waits on it.
+    const warm = () => (window.requestIdleCallback ?? ((fn) => window.setTimeout(fn, 800)))(probePages);
+    if (document.readyState === "complete") warm();
+    else window.addEventListener("load", warm, { once: true });
+
+    const neighbour = (list, dir) => {
+      for (let i = here + dir; i >= 0 && i < pages.length; i += dir) {
+        if (list[i]) return pages[i];
+      }
+      return null;
+    };
+
+    const body = document.body;
+    const EDGE = 24; // leave the screen edges to the browser's own back/forward gestures
+    let touch = null;
+
+    // Never hijack text fields or things that scroll sideways themselves (code blocks, tables).
+    const blocked = (el) => {
+      for (let n = el; n && n !== body; n = n.parentElement) {
+        if (n.matches?.("input, textarea, select, [contenteditable], [data-no-swipe]")) return true;
+        const { overflowX } = getComputedStyle(n);
+        if ((overflowX === "auto" || overflowX === "scroll") && n.scrollWidth > n.clientWidth) return true;
+      }
+      return false;
+    };
+
+    const settle = () => {
+      body.classList.remove("is-swiping");
+      body.classList.add("is-settling");
+      body.style.removeProperty("--swipe-x");
+      window.setTimeout(() => body.classList.remove("is-settling"), 400);
+    };
+
+    window.addEventListener(
+      "touchstart",
+      (e) => {
+        touch = null;
+        if (navigating || e.touches.length !== 1) return;
+        if ((window.visualViewport?.scale ?? 1) > 1.01) return; // pinch-zoomed in: let it pan
+        const root = document.documentElement;
+        if (root.scrollWidth > root.clientWidth + 1) return; // the page itself scrolls sideways: let it
+        const { clientX: x, clientY: y } = e.touches[0];
+        if (x < EDGE || x > window.innerWidth - EDGE) return;
+        if (blocked(e.target)) return;
+        if (window.getSelection?.().toString()) return;
+        touch = { x, y, t: Date.now(), mode: null };
+        probePages();
+      },
+      { passive: true }
+    );
+
+    window.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!touch) return;
+        if (e.touches.length !== 1) {
+          if (touch.mode === "h") settle();
+          touch = null;
+          return;
+        }
+
+        const dx = e.touches[0].clientX - touch.x;
+        const dy = e.touches[0].clientY - touch.y;
+
+        // Decide once whether this is a sideways swipe or an ordinary scroll.
+        if (!touch.mode && (Math.abs(dx) > 10 || Math.abs(dy) > 10)) {
+          touch.mode = Math.abs(dx) > Math.abs(dy) * 1.5 ? "h" : "v";
+        }
+        if (touch.mode !== "h" || reduceMotion) return;
+
+        // The page follows the finger a little; it resists when there's nowhere to go.
+        const dir = dx < 0 ? 1 : -1;
+        const hasNext = found ? !!neighbour(found, dir) : false;
+        const pull = Math.max(-64, Math.min(64, dx * (hasNext ? 0.35 : 0.12)));
+        body.classList.add("is-swiping");
+        body.classList.remove("is-settling");
+        body.style.setProperty("--swipe-x", `${pull}px`);
+      },
+      { passive: true }
+    );
+
+    const finish = (e) => {
+      const t = touch;
+      touch = null;
+      if (!t || t.mode !== "h") return;
+
+      const end = e.changedTouches?.[0];
+      const dx = end ? end.clientX - t.x : 0;
+      const dy = end ? end.clientY - t.y : 0;
+      const ms = Math.max(1, Date.now() - t.t);
+      const far = Math.abs(dx) >= Math.max(64, window.innerWidth * 0.2);
+      const quick = Math.abs(dx) >= 40 && Math.abs(dx) / ms > 0.5;
+      const committed = e.type === "touchend" && (far || quick) && Math.abs(dx) > Math.abs(dy) * 1.5;
+
+      if (!committed) {
+        settle();
+        return;
+      }
+
+      probePages().then((list) => {
+        const target = neighbour(list, dx < 0 ? 1 : -1);
+        if (target) navigateTo(target.href, Math.sign(dx));
+        else settle();
+      });
+    };
+
+    window.addEventListener("touchend", finish, { passive: true });
+    window.addEventListener("touchcancel", finish, { passive: true });
   };
 
   initSiteCursor();
   initNavTransitions();
+  initSwipeNav();
 })();
 
 /* ---------- Category column accordion toggle ---------- */
