@@ -1,8 +1,8 @@
 /*
   Diary: Eleventy config.
 
-  Markdown in src/posts/  ->  static HTML at /Diary/posts/<slug>/
-  The site lives under /Diary/ on sonothamin.dev (project page of the "Diary" repo),
+  Markdown in src/posts/  ->  static HTML at /diary/posts/<slug>/
+  The site lives under /diary/ on sonothamin.dev (project page of the "Diary" repo),
   so every internal link goes through Eleventy's `url` filter, which adds that prefix.
   Override with PATH_PREFIX=/ if you ever move it to its own domain or subdomain.
 */
