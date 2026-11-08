@@ -594,11 +594,27 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- motion ---------- */
 
+@keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
+.design-grid,
+.site-header,
+.app,
+.site-footer {
+  animation: pageFadeIn 0.35s ease both;
+}
+
+/* Page exit transition for seamless navigation */
+body.is-exiting > *:not(.site-cursor) {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  pointer-events: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  body.is-exiting > *:not(.site-cursor) { transition: none !important; }
 }
 
 /* ---------- responsive ---------- */

@@ -97,7 +97,48 @@
     window.addEventListener("pointerup", () => siteCursor.classList.remove("is-press"));
   };
 
+  /* ---------- Page navigation transitions ---------- */
+  const initNavTransitions = () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (link.target && link.target !== "_self") return;
+      if (link.hasAttribute("download")) return;
+
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+
+      const url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+
+      // Ignore anchor jumps or clicking current page
+      if (url.pathname === window.location.pathname && url.search === window.location.search) {
+        if (url.hash) return;
+        e.preventDefault();
+        return;
+      }
+
+      if (reduceMotion) return;
+
+      e.preventDefault();
+      document.body.classList.add("is-exiting");
+
+      setTimeout(() => {
+        window.location.href = url.href;
+      }, 200);
+    });
+
+    window.addEventListener("pageshow", (e) => {
+      document.body.classList.remove("is-exiting");
+    });
+  };
+
   initSiteCursor();
+  initNavTransitions();
 })();
 
 /* ---------- Category column accordion toggle ---------- */
