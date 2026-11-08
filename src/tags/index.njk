@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+title: Tags
+description: Posts grouped by project or topic.
+permalink: "/tags/"
+---
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ '/' | url }}">Diary</a><span class="sep" aria-hidden="true">/</span><span>Tags</span>
+  </nav>
+  <h1 class="page-title">Tags</h1>
+  <p class="page-lead">Entries grouped by project or topic. {{ tagList.length }} {{ "tag." if tagList.length == 1 else "tags." }}</p>
+</header>
+
+<div class="years">
+  {%- if tagList.length %}
+  <section class="year-group">
+    <h2 class="year">Projects</h2>
+    <ul class="table">
+    {%- for t in tagList %}
+      <li>
+        <a class="trow" href="{{ ('/tags/' + t.slug + '/') | url }}">
+          <span class="t-date">{{ t.latest | fmtDate }}</span>
+          <span class="t-main">
+            <span class="t-title">{{ t.title }}</span>
+            {%- if t.blurb %}
+            <span class="t-sum">{{ t.blurb }}</span>
+            {%- endif %}
+          </span>
+          <span class="t-read">{{ t.count }} {{ "post" if t.count == 1 else "posts" }}</span>
+        </a>
+      </li>
+    {%- endfor %}
+    </ul>
+  </section>
+  {%- else %}
+  <p class="note">No tags yet. Add <code>tags: [my-project]</code> to a post's front matter.</p>
+  {%- endif %}
+</div>

@@ -1,0 +1,55 @@
+{%- set pageTitle = title or (cat.title if cat) or (tag.title if tag) -%}
+{%- set pageDesc = description or summary or (cat.blurb if cat) or (tag.blurb if tag) or site.description -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if pageTitle %}{{ pageTitle }} · {% endif %}{{ site.title }} · {{ site.author }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="{{ site.origin }}{{ page.url | url }}">
+
+<meta property="og:type" content="{{ 'article' if category else 'website' }}">
+<meta property="og:title" content="{{ pageTitle or site.title }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:url" content="{{ site.origin }}{{ page.url | url }}">
+
+<script>document.documentElement.classList.add("js")</script>
+<link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}">
+
+<!-- Same fonts as the main site -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=kola@400&display=swap" rel="stylesheet">
+{%- if category %}
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+{%- endif %}
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} · {{ site.author }}" href="{{ '/feed.xml' | url }}">
+<link rel="stylesheet" href="{{ '/css/diary.css' | url }}">
+</head>
+<body>
+<div class="design-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Primary">
+    {%- for item in site.nav %}
+    <a href="{{ item.href }}" class="nav-link{% if item.self %} is-active{% endif %}"{% if item.self %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    {%- endfor %}
+  </nav>
+</header>
+
+<main id="app" class="app{% if wide %} app--wide{% endif %}">
+{{ content | safe }}
+</main>
+
+<footer class="site-footer">
+  <p>&copy; {{ site.year }} {{ site.author }}</p>
+</footer>
+
+<script src="{{ '/js/diary.js' | url }}" defer></script>
+</body>
+</html>

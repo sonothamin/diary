@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+wide: true
+---
+<section class="intro">
+  <h1 class="page-title">Diary</h1>
+  <span class="rule" aria-hidden="true"></span>
+  <p class="page-lead">A maker's log-book. A futile attempt of documenting my small life journey.</p>
+  <p class="intro-links">
+    <a class="link-btn" href="{{ '/posts/' | url }}">All posts →</a>
+    {%- if tagList.length %}
+    <a class="link-btn" href="{{ '/tags/' | url }}">Tags →</a>
+    {%- endif %}
+  </p>
+</section>
+
+<div class="grid">
+{%- for cat in categories %}
+{%- set list = collections.diary | inCategory(cat.slug) %}
+{%- set catUrl = ('/category/' + cat.slug + '/') | url %}
+  <section class="col" style="--c: {{ loop.index0 }}">
+    <header class="col-head">
+      <a class="col-title" href="{{ catUrl }}">
+        <h2>{{ cat.title }}</h2>
+        <span class="col-count">{{ list.length | pad2 }}</span>
+      </a>
+      <p class="col-desc">{{ cat.blurb }}</p>
+    </header>
+
+    <ul class="rows">
+    {%- for p in list %}
+      <li{% if loop.index > site.homeLimit %} class="is-extra"{% endif %}>
+        <a class="row" href="{{ p.url | url }}">
+          <span class="row-num">{{ loop.index | pad2 }}</span>
+          <span class="row-text">
+            <span class="row-title">{{ p.data.title }}</span>
+            <span class="row-meta">{{ p.date | fmtDate }} · {{ p.data.read }} min</span>
+          </span>
+        </a>
+      </li>
+    {%- endfor %}
+    </ul>
+
+    <footer class="col-foot">
+      {%- if list.length > site.homeLimit %}
+      {%- set hiddenCount = list.length - site.homeLimit %}
+      <button class="link-btn" type="button" data-toggle aria-expanded="false" data-more="Show {{ hiddenCount }} more +" data-less="Show less −">Show {{ hiddenCount }} more +</button>
+      {%- endif %}
+      <a class="link-btn" href="{{ catUrl }}">Explore all →</a>
+    </footer>
+  </section>
+{%- endfor %}
+</div>

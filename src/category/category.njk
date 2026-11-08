@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: categories
+  size: 1
+  alias: cat
+permalink: "/category/{{ cat.slug }}/"
+---
+{%- set list = collections.diary | inCategory(cat.slug) %}
+<header class="page-head">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ '/' | url }}">Diary</a><span class="sep" aria-hidden="true">/</span><span>{{ cat.title }}</span>
+  </nav>
+  <h1 class="page-title">{{ cat.title }}</h1>
+  <p class="page-lead">{{ cat.blurb }} {{ list.length }} {{ "entry." if list.length == 1 else "entries." }}</p>
+</header>
+
+<nav class="chips" aria-label="Categories">
+  <a class="chip" href="{{ '/posts/' | url }}">All</a>
+  {%- for c in categories %}
+  <a class="chip" href="{{ ('/category/' + c.slug + '/') | url }}"{% if c.slug == cat.slug %} aria-current="page"{% endif %}>{{ c.title }}</a>
+  {%- endfor %}
+</nav>
+
+<div class="years">
+{%- for g in list | byYear %}
+  <section class="year-group">
+    <h2 class="year">{{ g.year }}</h2>
+    <ul class="table">
+    {%- for p in g.posts %}
+      <li>
+        <a class="trow" href="{{ p.url | url }}">
+          <span class="t-date">{{ p.date | fmtDate }}</span>
+          <span class="t-main">
+            <span class="t-title">{{ p.data.title }}</span>
+            <span class="t-sum">{{ p.data.summary }}</span>
+          </span>
+          <span class="t-read">{{ p.data.read }} min</span>
+        </a>
+      </li>
+    {%- endfor %}
+    </ul>
+  </section>
+{%- else %}
+  <p class="note">No entries here yet.</p>
+{%- endfor %}
+</div>

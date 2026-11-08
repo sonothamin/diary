@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Diary · Sonoth Amin</title>
+    <link>https://sonothamin.dev/Diary/</link>
+    <atom:link href="https://sonothamin.dev/Diary/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Notes on building, learning and everything else.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>My post title</title>
+      <link>https://sonothamin.dev/Diary/posts/my-post-title/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/my-post-title/</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Building</category>
+      <content:encoded><![CDATA[<p>Write here.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>My development setup in 2026</title>
+      <link>https://sonothamin.dev/Diary/posts/my-dev-setup/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/my-dev-setup/</guid>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Tech &amp; Tools</category>
+      <description>Hardware, editor, terminal and the settings I would carry to any machine.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Rebuilding my portfolio without a framework</title>
+      <link>https://sonothamin.dev/Diary/posts/portfolio-site-rebuild/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/portfolio-site-rebuild/</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Building</category>
+      <description>Why I went back to plain HTML, CSS and a little JavaScript, and what I gained.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>How I take notes when learning something new</title>
+      <link>https://sonothamin.dev/Diary/posts/notes-when-learning/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/notes-when-learning/</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Learning</category>
+      <description>A lightweight system that survives past the first week of enthusiasm.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Shipping the first version of this diary</title>
+      <link>https://sonothamin.dev/Diary/posts/diary-first-version/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/diary-first-version/</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Building</category>
+      <description>Scope, shortcuts and the one feature I cut to get it out the door.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>In praise of the slow Sunday</title>
+      <link>https://sonothamin.dev/Diary/posts/slow-sunday/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/slow-sunday/</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Life</category>
+      <description>A short note on doing very little on purpose.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Terminal tweaks worth keeping</title>
+      <link>https://sonothamin.dev/Diary/posts/terminal-tweaks/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/terminal-tweaks/</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Tech &amp; Tools</category>
+      <description>A few aliases and prompts that earned a permanent place.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Small tools that saved me hours</title>
+      <link>https://sonothamin.dev/Diary/posts/small-tools-big-wins/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/small-tools-big-wins/</guid>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Building</category>
+      <description>A handful of tiny utilities that paid for themselves within a week.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Finally understanding CSS grid</title>
+      <link>https://sonothamin.dev/Diary/posts/css-grid-deep-dive/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/css-grid-deep-dive/</guid>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 GMT</pubDate>
+      <category>Learning</category>
+      <description>The mental model that made tracks, areas and auto-placement click.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Books that stuck with me this year</title>
+      <link>https://sonothamin.dev/Diary/posts/books-this-year/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/books-this-year/</guid>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <category>Life</category>
+      <description>Five reads, why they landed, and one I abandoned.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>A side project postmortem</title>
+      <link>https://sonothamin.dev/Diary/posts/side-project-postmortem/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/side-project-postmortem/</guid>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Building</category>
+      <description>What went right, what quietly died, and what I would do differently.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Editor shortcuts I use every day</title>
+      <link>https://sonothamin.dev/Diary/posts/editor-shortcuts/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/editor-shortcuts/</guid>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Tech &amp; Tools</category>
+      <description>Ten keystrokes that quietly changed how I write code.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Reading documentation like a book</title>
+      <link>https://sonothamin.dev/Diary/posts/reading-docs-like-a-book/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/reading-docs-like-a-book/</guid>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Learning</category>
+      <description>Why the boring overview page is usually the best use of an hour.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>What building in public actually taught me</title>
+      <link>https://sonothamin.dev/Diary/posts/building-in-public/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/building-in-public/</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <category>Building</category>
+      <description>Less about audience, more about finishing things.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Walking is my best debugging tool</title>
+      <link>https://sonothamin.dev/Diary/posts/walking-and-thinking/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/walking-and-thinking/</guid>
+      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
+      <category>Life</category>
+      <description>Most stuck problems come unstuck about ten minutes outside.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>GitHub Pages vs Cloudflare for static sites</title>
+      <link>https://sonothamin.dev/Diary/posts/static-hosting-compared/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/static-hosting-compared/</guid>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+      <category>Tech &amp; Tools</category>
+      <description>Where each one is simpler, and where each one gets in the way.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Git beyond add, commit, push</title>
+      <link>https://sonothamin.dev/Diary/posts/git-beyond-basics/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/git-beyond-basics/</guid>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Learning</category>
+      <description>Rebase, reflog and the commands that rescue a bad afternoon.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>A weekend prototype, start to finish</title>
+      <link>https://sonothamin.dev/Diary/posts/weekend-prototype/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/weekend-prototype/</guid>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Building</category>
+      <description>From a napkin sketch to something clickable in two days.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Notes from a short trip</title>
+      <link>https://sonothamin.dev/Diary/posts/short-trip-notes/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/short-trip-notes/</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Life</category>
+      <description>Small observations from a few days away.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Why I finally moved to a password manager</title>
+      <link>https://sonothamin.dev/Diary/posts/password-manager/</link>
+      <guid isPermaLink="true">https://sonothamin.dev/Diary/posts/password-manager/</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+      <category>Tech &amp; Tools</category>
+      <description>The habit change was harder than the setup.</description>
+      <content:encoded><![CDATA[<p>Demo entry. Delete the <code>src/posts/_demo</code> folder once you have real posts.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae urna sed augue tempor feugiat, with a <a href="https://sonothamin.dev">link</a> and some <code>inline code</code>.</p>
+<h2>Why it matters</h2>
+<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+<blockquote>
+<p>A short pull quote sits here, set apart from the body so the page has some rhythm.</p>
+</blockquote>
+<h2>How it works in practice</h2>
+<ul>
+<li>First point, kept short and easy to scan.</li>
+<li>Second point, with a little more detail than the first.</li>
+<li>Third point, to round out the list.</li>
+</ul>
+<pre><code class="language-bash">echo &quot;code blocks look like this&quot;
+</code></pre>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

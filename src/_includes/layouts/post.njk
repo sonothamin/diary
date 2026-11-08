@@ -1,0 +1,80 @@
+---
+layout: layouts/base.njk
+---
+{%- set cat = categories | catBySlug(category) %}
+{%- set catUrl = ('/category/' + cat.slug + '/') | url %}
+{%- set ctx = collections.diary | postContext(page.url, category) %}
+{%- set ptags = tags | tagsOf(tagList) %}
+<header class="post-head">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ '/' | url }}">Diary</a><span class="sep" aria-hidden="true">/</span><a href="{{ catUrl }}">{{ cat.title }}</a><span class="sep" aria-hidden="true">/</span><span>{{ title }}</span>
+  </nav>
+  <h1 class="page-title post-title">{{ title }}</h1>
+  <p class="post-meta">
+    <span>{{ page.date | fmtDate }}</span>
+    <span>{{ read }} min read</span>
+    <a href="{{ catUrl }}">{{ cat.title }}</a>
+  </p>
+  {%- if summary %}
+  <p class="lead">{{ summary }}</p>
+  {%- endif %}
+  {%- if ptags.length %}
+  <nav class="chips post-tags" aria-label="Tags">
+    {%- for t in ptags %}
+    <a class="chip" href="{{ ('/tags/' + t.slug + '/') | url }}">{{ t.title }}</a>
+    {%- endfor %}
+  </nav>
+  {%- endif %}
+</header>
+
+<div class="post-layout">
+  <article class="prose">
+{{ content | safe }}
+    {%- if ctx.newer or ctx.older %}
+    <nav class="post-nav" aria-label="More posts">
+      {%- if ctx.newer %}
+      <a class="prev" href="{{ ctx.newer.url | url }}"><span class="dir">← Newer</span><span class="ttl">{{ ctx.newer.data.title }}</span></a>
+      {%- endif %}
+      {%- if ctx.older %}
+      <a class="next" href="{{ ctx.older.url | url }}"><span class="dir">Older →</span><span class="ttl">{{ ctx.older.data.title }}</span></a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </article>
+
+  <aside class="post-aside">
+    <section class="aside-block">
+      <h3>Details</h3>
+      <dl class="details">
+        <div><dt>Category</dt><dd><a href="{{ catUrl }}">{{ cat.title }}</a></dd></div>
+        <div><dt>Published</dt><dd>{{ page.date | fmtDate }}</dd></div>
+        <div><dt>Reading time</dt><dd>{{ read }} min</dd></div>
+      </dl>
+    </section>
+    {%- for t in ptags | head(2) %}
+    {%- set rel = collections.diary | tagOthers(page.url, t.slug, 5) %}
+    {%- if rel.length %}
+    <section class="aside-block">
+      <h3>More in {{ t.title }}</h3>
+      <ul class="more-list">
+        {%- for p in rel %}
+        <li><a href="{{ p.url | url }}"><span class="m-title">{{ p.data.title }}</span><span class="m-date">{{ p.date | fmtDate }}</span></a></li>
+        {%- endfor %}
+      </ul>
+      <a class="link-btn" href="{{ ('/tags/' + t.slug + '/') | url }}">Explore all →</a>
+    </section>
+    {%- endif %}
+    {%- endfor %}
+    {%- if ctx.others.length %}
+    <section class="aside-block">
+      <h3>More in {{ cat.title }}</h3>
+      <ul class="more-list">
+        {%- for p in ctx.others %}
+        <li><a href="{{ p.url | url }}"><span class="m-title">{{ p.data.title }}</span><span class="m-date">{{ p.date | fmtDate }}</span></a></li>
+        {%- endfor %}
+      </ul>
+      <a class="link-btn" href="{{ catUrl }}">Explore all →</a>
+    </section>
+    {%- endif %}
+  </aside>
+</div>

@@ -1,0 +1,11 @@
+---
+title: "Post title"
+date: 2026-11-08
+category: building        # any slug, new ones are created automatically
+summary: "One or two sentences shown in the lead and on category pages."
+# read: 6                 # optional, otherwise calculated from word count
+# tags: [My Project]       # optional, groups posts into /tags/my-project/
+# draft: true             # optional, hides it from production builds
+---
+
+Write in Markdown here.

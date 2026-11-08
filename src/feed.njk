@@ -1,0 +1,35 @@
+---
+permalink: "/feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ site.title }} · {{ site.author }}</title>
+    <link>{{ site.origin }}{{ '/' | url }}</link>
+    <atom:link href="{{ site.origin }}{{ '/feed.xml' | url }}" rel="self" type="application/rss+xml"/>
+    <description>{{ site.description }}</description>
+    <language>en</language>
+    {%- if collections.diary.length %}
+    <lastBuildDate>{{ collections.diary[0].date | rfc822 }}</lastBuildDate>
+    {%- endif %}
+    {%- for p in collections.diary | head(20) %}
+    {%- set c = categories | catBySlug(p.data.category) %}
+    {%- set link = site.origin + (p.url | url) %}
+    <item>
+      <title>{{ p.data.title }}</title>
+      <link>{{ link }}</link>
+      <guid isPermaLink="true">{{ link }}</guid>
+      <pubDate>{{ p.date | rfc822 }}</pubDate>
+      <category>{{ c.title }}</category>
+      {%- for t in p.data.tags | tagsOf(tagList) %}
+      <category>{{ t.title }}</category>
+      {%- endfor %}
+      {%- if p.data.summary %}
+      <description>{{ p.data.summary }}</description>
+      {%- endif %}
+      <content:encoded>{{ p.templateContent | absolutize(site.origin, p.url | url) | cdata | safe }}</content:encoded>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
