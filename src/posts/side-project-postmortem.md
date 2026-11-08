@@ -4,7 +4,7 @@ date: 2026-07-19
 category: building
 summary: "What went right, what quietly died, and what I would do differently."
 read: 8
-draft: true
+draft: false
 ---
 
 Demo entry. Delete the `src/posts/_demo` folder once you have real posts.

@@ -4,7 +4,7 @@ date: 2026-08-22
 category: learning
 summary: "The mental model that made tracks, areas and auto-placement click."
 read: 9
-draft: true
+draft: false
 ---
 
 Demo entry. Delete the `src/posts/_demo` folder once you have real posts.

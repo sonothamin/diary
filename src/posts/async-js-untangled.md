@@ -4,7 +4,7 @@ date: 2026-01-27
 category: learning
 summary: "Callbacks, promises and async/await as one story instead of three."
 read: 10
-draft: true
+draft: false
 ---
 
 Demo entry. Delete the `src/posts/_demo` folder once you have real posts.

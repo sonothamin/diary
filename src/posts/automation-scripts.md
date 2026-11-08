@@ -4,7 +4,7 @@ date: 2025-12-21
 category: tools
 summary: "Boring, repetitive tasks and the twenty-line scripts that ended them."
 read: 6
-draft: true
+draft: false
 ---
 
 Demo entry. Delete the `src/posts/_demo` folder once you have real posts.

@@ -4,7 +4,7 @@ date: 2026-10-20
 category: learning
 summary: "A lightweight system that survives past the first week of enthusiasm."
 read: 5
-draft: true
+draft: false
 ---
 
 Demo entry. Delete the `src/posts/_demo` folder once you have real posts.

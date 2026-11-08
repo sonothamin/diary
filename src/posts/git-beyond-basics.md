@@ -4,7 +4,7 @@ date: 2026-04-05
 category: learning
 summary: "Rebase, reflog and the commands that rescue a bad afternoon."
 read: 8
-draft: true
+draft: false
 ---
 
 Demo entry. Delete the `src/posts/_demo` folder once you have real posts.
